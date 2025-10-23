@@ -55,4 +55,16 @@ https://www.kaggle.com/datasets/adilshamim8/student-depression-dataset
 
 
 ## Data Modelling
+Two models were compared: Random Forest and XGBoost.
+The dataset was split into 80% training and 20% testing. Both models were trained to predict the Depression label (1 = Yes, 0 = No).
 
+## Results 
+
+Two machine learning models were compared: Random Forest and XGBoost.
+Both were trained on 80% training data and tested on 20% testing data to predict the Depression label (1 = Yes, 0 = No).
+
+Model	Accuracy	Precision	Recall	F1-Score
+Random Forest	0.837	0.84	0.84	0.84
+XGBoost	0.838	0.84	0.84	0.84
+
+## Insights 
