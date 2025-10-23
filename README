@@ -1,0 +1,16 @@
+
+# Student Depression Prediction: A Comparison between XGBoost and Random Forest
+
+
+## Description 
+This project aims to identify whether students show a tendency toward depression based on lifestyle and demographic factors. By comparing two machine learning models XGBoost and Random Forest this study explores how these algorithms can detect patterns that may indicate the early stages of depression.
+
+## Objectives 
+1. Data Cleaning and Data Preprocessing, such as data mapping, check for null values and check for duplicated value. 
+2. Performing Exploratory Data Analysis (EDA) of certain fields.
+3. Data Modelling and Comparative Analysis of 2 models (XGBoost and Random Forest).
+4. Evaluate model performance using accuracy, classifcation report and confusion matrix.
+
+## Tools & Libraries 
+1. Python (Pandas, Numpy, Skcikit )
+https://www.kaggle.com/datasets/adilshamim8/student-depression-dataset 
