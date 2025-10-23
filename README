@@ -12,5 +12,9 @@ This project aims to identify whether students show a tendency toward depression
 4. Evaluate model performance using accuracy, classifcation report and confusion matrix.
 
 ## Tools & Libraries 
-1. Python (Pandas, Numpy, Skcikit )
+Python (Pandas, Numpy, Skcikit-learn, Seaborn, Matplotlib, XGBoost)
+
+## Data Preprocessing 
+1. 
+
 https://www.kaggle.com/datasets/adilshamim8/student-depression-dataset 
