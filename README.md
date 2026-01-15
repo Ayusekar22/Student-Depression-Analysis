@@ -1,6 +1,6 @@
 # Identifying the Real Causes of Student Depression: A Data-Driven Study
 
-What are the real drivers of student depression?*** In this project, I applied XGBoost and Random Forest to identify high-risk patterns among students. By analyzing 27,900 records, I moved beyond just making predictions to focus on interpretability. The goal is to highlight the specific lifestyle factors that lead to mental health struggles, making it easier to spot early warning signs and provide timely help.
+***What are the real drivers of student depression?*** In this project, I applied XGBoost and Random Forest to identify high-risk patterns among students. By analyzing 27,900 records, I moved beyond just making predictions to focus on interpretability. The goal is to highlight the specific lifestyle factors that lead to mental health struggles, making it easier to spot early warning signs and provide timely help.
 
 ---
 
