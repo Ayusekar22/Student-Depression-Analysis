@@ -16,7 +16,7 @@ This project analyzes 27,900 student records to identify the real drivers of dep
 ## Table of Contents
 1. [Dataset](#dataset)
 2. [Data Preprocessing](#data-preprocessing)
-3. [Exploratory Data Analysis (EDA)](#EDA)
+3. [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
 4. [Model Development](#model-development)
 5. [Results](#results)
 6. [Conclusion](#conclusion)
