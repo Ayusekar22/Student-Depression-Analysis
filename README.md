@@ -17,12 +17,11 @@ This project analyzes 27,900 student records to identify the real drivers of dep
 1. [Dataset](#dataset)
 2. [Data Preprocessing](#data-preprocessing)
 3. [Exploratory Data Analysis (EDA)](#EDA)
-5. [Feature Engineering](#feature-engineering)
-6. [Model Development](#model-development)
-7. [Results](#results)
-8. [Conclusion](#conclusion)
-9. [License](#license)
-10. [Contact](#contact)
+4. [Model Development](#model-development)
+5. [Results](#results)
+6. [Conclusion](#conclusion)
+7. [License](#license)
+8. [Contact](#contact)
 
 ---
 
@@ -74,7 +73,11 @@ Many features were in categorical format, so I performed mapping to convert the 
 ### 3. Feature Selection
 I removed attributes with object data types as they cannot be processed directly by the models. After cleaning, the dataset was reduced to **11 attributes**.
 
+
+[⬆ Back to Top](#table-of-contents)
+
 ---
+
 
 ## Exploratory Data Analysis (EDA)
 Through this analysis, I was able to obtain several insights from the dataset, as summarized below : 
@@ -120,13 +123,12 @@ Surprisingly, the data reveals that Study Satisfaction does not show a clear dif
 
 The chart reveals that suicidal thoughts, academic pressure, and financial stress are the strongest predictors of depression, showing the highest correlation coefficients. While lifestyle factors like age and diet show moderate impact, academic performance (CGPA) and sleep duration have surprisingly low correlations, suggesting that emotional and external pressures are far more critical indicators of mental health in this dataset than grades or biological habits.
 
+[⬆ Back to Top](#table-of-contents)
 ---
 
 ## Model Development
 
 After exploring the data through EDA, I built two models: **Random Forest** and **XGBoost**. The dataset was split into 80% training and 20% testing to predict the Depression label (1 = Yes, 0 = No).
-
-### Model Selection 
 
 **Random Forest** was chosen as the baseline model because it is:
 - Easy to implement
@@ -150,6 +152,8 @@ Both Random Forest and XGBoost models demonstrated nearly identical performance 
 | Random Forest  | 0.837    | 0.84      | 0.84   | 0.84     |
 | XGBoost        | 0.838    | 0.84      | 0.84   | 0.84     |
 
+[⬆ Back to Top](#table-of-contents)
+
 ---
 
 ## Conclusion
@@ -158,3 +162,23 @@ This study demonstrates that student depression is primarily driven by psycholog
 - The Data reveals that CGPA and Study Satisfaction do not correlate with depression, highlighting that high-performing students often mask their mental health struggles.
 - Demographic factors like **Age and Gender showed no significant variance**, proving that depression is a widespread issue across the entire student population.
 - Both XGBoost and Random Forest achieved a consistent 84% accuracy, confirming that behavioral and situational data are reliable for predicting mental health risks.
+
+[⬆ Back to Top](#table-of-contents)
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+![License](Gambar/License.svg)
+
+---
+
+## Contact
+
+If you have any questions or feedback, feel free to reach out:
+- **Email:** Ayusekar1822@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/ayusekar22/
+- **GitHub:** https://github.com/Ayusekar22
+
+[⬆ Back to Top](#table-of-contents)
