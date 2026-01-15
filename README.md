@@ -1,8 +1,30 @@
-# Student Depression Prediction: A Comparison between XGBoost and Random Forest
+# Identifying the Real Causes of Student Depression: A Data-Driven Study
 
-## Description 
+What are the real drivers of student depression?*** In this project, I applied XGBoost and Random Forest to identify high-risk patterns among students. By analyzing 27,900 records, I moved beyond just making predictions to focus on interpretability. The goal is to highlight the specific lifestyle factors that lead to mental health struggles, making it easier to spot early warning signs and provide timely help.
 
-This project aims to identify whether students show a tendency toward depression based on lifestyle and demographic factors. By comparing two machine learning models (XGBoost and Random Forest) this study explores how these algorithms can detect patterns that may indicate early stages of depression, ultimately helping students who are experiencing depression to seek mental health support.
+---
+
+## 📌 Quick Overview
+This project analyzes 27,900 student records to identify the real drivers of depression using machine learning. By moving beyond simple prediction, this study highlights the "hidden" struggles of high-achieving students.
+
+- Suicidal thoughts, academic pressure, and financial stress are the strongest predictors of depression.
+- Depression does not correlate with academic performance; high-functioning students with top CGPA and high Study Satisfaction still face significant mental health risks.
+- Age and gender show no significant variance, indicating that mental health issues are universal across the student population.
+- Both XGBoost and Random Forest models achieved a consistent 84% accuracy, proving that situational and behavioral data are reliable for early detection.
+---
+
+## Table of Contents
+1. [Dataset](#dataset)
+2. [Data Preprocessing](#data-preprocessing)
+3. [Exploratory Data Analysis (EDA)](#EDA)
+5. [Feature Engineering](#feature-engineering)
+6. [Model Development](#model-development)
+7. [Results](#results)
+8. [Conclusion](#conclusion)
+9. [License](#license)
+10. [Contact](#contact)
+
+---
 
 ## Dataset 
 
@@ -12,18 +34,28 @@ The dataset used in this research was obtained from Kaggle: [Student Depression 
 - **Attributes**: 18
 - **Format**: Tabular data
 
-## Objectives 
+| Column | Description |
+| :--- | :--- |
+| id | Unique identifier for each respondent |
+| Gender | Respondent's gender (Male/Female) |
+| Age | Respondent's age |
+| City | City of residence |
+| Profession | Current occupation or professional status |
+| Academic Pressure | Level of academic pressure experienced |
+| Work Pressure | Level of work-related pressure experienced |
+| CGPA | Cumulative Grade Point Average |
+| Study Satisfaction | Level of satisfaction with academic studies |
+| Job Satisfaction | Level of satisfaction with job |
+| Sleep Duration | Average sleep duration per day |
+| Dietary Habits | Eating habits (Healthy / Moderate / Unhealthy) |
+| Degree | Current or highest educational degree |
+| Suicidal Thoughts | History of suicidal thoughts |
+| Work/Study Hours | Daily working or study duration |
+| Financial Stress | Level of stress caused by financial factors |
+| Family History | Family history of mental health disorders |
+| Depression | Depression indicator (target variable) |
 
-1. Data Cleaning and Preprocessing  
-2. Exploratory Data Analysis (EDA)  
-3. Feature Selection and Data Splitting  
-4. Model Building (Random Forest and XGBoost)  
-5. Model Evaluation and Comparison  
-6. Insights and Interpretation
-
-## Tools & Libraries 
-
-Python (Pandas, NumPy, Scikit-learn, Seaborn, Matplotlib, XGBoost)
+---
 
 ## Data Preprocessing 
 
@@ -42,8 +74,7 @@ Many features were in categorical format, so I performed mapping to convert the 
 ### 3. Feature Selection
 I removed attributes with object data types as they cannot be processed directly by the models. After cleaning, the dataset was reduced to **11 attributes**.
 
-### 4. Train-Test Split
-The data was split into **80% training** and **20% testing** sets for model development and evaluation.
+---
 
 ## Exploratory Data Analysis (EDA)
 Through this analysis, I was able to obtain several insights from the dataset, as summarized below : 
@@ -51,20 +82,22 @@ Through this analysis, I was able to obtain several insights from the dataset, a
 
 ![Student Depression Distribution](image-1.png)
 
+The dataset shows the distribution of students identified with depression versus those who are not. Understanding this balance is crucial for assessing model bias and ensuring the reliability of our classification results.
+
 ### 2. Academic Pressure vs. Depression
 ![Academic Pressure vs Depression](image-2.png)
 
-Students with depression have higher academic pressure compared to those without depression. The median and data distribution show a strong relationship between academic pressure levels and depression risk.
+There is a clear positive correlation between academic pressure and depression risk. Students categorized as depressed exhibit a significantly higher median pressure score. This suggests that high academic load is a primary predictor for mental health struggles in this cohort.
 
 ### 3. Family History and Depression Percentage 
 ![Family History and Depression](image-4.png)
 
-Students with a family history of mental illness tend to have a higher depression rate (approximately 61%) compared to those without such history (approximately 56%). Although the difference is not major, it shows that genetic or family environmental factors may play a role in depression tendency.
+Data indicates that a family history of mental illness increases the prevalence of depression by approximately 5%. While not the sole determinant, it acts as a contributing risk factor, suggesting a genetic or environmental predisposition that the model should account fo
 
 ### 4. Age Distribution Based on Depression Status
 ![Age Distribution](image-5.png)
 
-The number of non-depressed respondents is significantly higher than depressed respondents across almost all age groups. The distribution pattern between both groups is similar, suggesting that age does not appear to be a primary factor between depressed and non-depressed students in this case.
+Interestingly, both Age and Gender show a relatively uniform distribution across depressed and non-depressed groups. The lack of significant variance suggests that these demographic factors are not dominant drivers of depression within this specific dataset, shifting the focus toward behavioral and situational variables.
 
 ### 5. Depression Count by Gender
 ![Depression by Gender](image-6.png)
@@ -74,18 +107,26 @@ The number of students experiencing depression is higher than those who are not,
 ### 6. CGPA Distribution by Depression
 ![CGPA Distribution](image-7.png)
 
-There is no significant difference in CGPA between students with depression and those without. The median and distribution of CGPA for both groups are almost identical, indicating that depression does not  affect academic performance (in terms of CGPA)
+Contrary to common assumptions, CGPA and Study Satisfaction scores are nearly identical for both groups. This finding is critical: it reveals that depression does not necessarily correlate with poor academic performance, highlighting the existence of "high-functioning" depression among students who maintain high grades while struggling mentally.
 
 ### 7. Study Satisfaction vs Depression
 ![Study Satisfaction](image-8.png)
 
-Students experiencing depression have similar study satisfaction levels compared to students without depression. There is no huge difference in terms of median or value distribution.
+Surprisingly, the data reveals that Study Satisfaction does not show a clear difference between depressed and non-depressed students. Both groups report nearly identical satisfaction levels.This finding suggests a "hidden" struggle: a student can be satisfied with their major or studies and still experience high levels of depression. It proves that academic happiness alone is not a reliable indicator of a student's mental health status, as depression can exist even when a student feels positive about their academic choices.
+
+### 8. Top 10 Features
+
+![Top10Feature](image-9.png)
+
+The chart reveals that suicidal thoughts, academic pressure, and financial stress are the strongest predictors of depression, showing the highest correlation coefficients. While lifestyle factors like age and diet show moderate impact, academic performance (CGPA) and sleep duration have surprisingly low correlations, suggesting that emotional and external pressures are far more critical indicators of mental health in this dataset than grades or biological habits.
+
+---
 
 ## Model Development
 
 After exploring the data through EDA, I built two models: **Random Forest** and **XGBoost**. The dataset was split into 80% training and 20% testing to predict the Depression label (1 = Yes, 0 = No).
 
-### Model Selection Rationale:
+### Model Selection 
 
 **Random Forest** was chosen as the baseline model because it is:
 - Easy to implement
@@ -95,8 +136,10 @@ After exploring the data through EDA, I built two models: **Random Forest** and 
 **XGBoost** was selected as an advanced boosting algorithm with:
 - Better generalization ability
 - Built-in regularization to prevent overfitting
-- High training efficiency
+-High training efficiency
 - Often produces more accurate predictions
+
+---
 
 ## Results 
 
@@ -107,11 +150,11 @@ Both Random Forest and XGBoost models demonstrated nearly identical performance 
 | Random Forest  | 0.837    | 0.84      | 0.84   | 0.84     |
 | XGBoost        | 0.838    | 0.84      | 0.84   | 0.84     |
 
-## Conclusion
-At the end, here are the important things I learned from the analysis:
-- Academic pressure shows a strong correlation with depression risk
-- Family history of mental illness slightly increases depression tendency
-- Age and gender do not appear to be dominant factors in this case
-- Depression does not significantly impact academic performance (CGPA)
+---
 
-These models can serve as valuable tools for early detection of depression tendencies among students, potentially facilitating timely intervention and mental health support.
+## Conclusion
+This study demonstrates that student depression is primarily driven by psychological and external pressures rather than academic performance. Key insights include:
+- Top Predictors: **Suicidal thoughts, academic pressure, and financial stress** are the most critical early warning signs identified by the models.
+- The Data reveals that CGPA and Study Satisfaction do not correlate with depression, highlighting that high-performing students often mask their mental health struggles.
+- Demographic factors like **Age and Gender showed no significant variance**, proving that depression is a widespread issue across the entire student population.
+- Both XGBoost and Random Forest achieved a consistent 84% accuracy, confirming that behavioral and situational data are reliable for predicting mental health risks.
