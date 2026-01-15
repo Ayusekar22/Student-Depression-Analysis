@@ -128,7 +128,7 @@ The chart reveals that suicidal thoughts, academic pressure, and financial stres
 
 ## Model Development
 
-After exploring the data through EDA, I built two models: **Random Forest** and **XGBoost**. The dataset was split into 80% training and 20% testing to predict the Depression label (1 = Yes, 0 = No).
+After exploring the data through EDA, I use two models: **Random Forest** and **XGBoost**. The dataset was split into 80% training and 20% testing to predict the Depression label (1 = Yes, 0 = No).
 
 **Random Forest** was chosen as the baseline model because it is:
 - Easy to implement
