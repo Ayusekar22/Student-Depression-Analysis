@@ -124,7 +124,7 @@ Surprisingly, the data reveals that Study Satisfaction does not show a clear dif
 The chart reveals that suicidal thoughts, academic pressure, and financial stress are the strongest predictors of depression, showing the highest correlation coefficients. While lifestyle factors like age and diet show moderate impact, academic performance (CGPA) and sleep duration have surprisingly low correlations, suggesting that emotional and external pressures are far more critical indicators of mental health in this dataset than grades or biological habits.
 
 [⬆ Back to Top](#table-of-contents)
-
+ 
 ---
 
 ## Model Development
